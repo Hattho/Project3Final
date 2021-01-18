@@ -1,0 +1,68 @@
+﻿@model TrainTravel.ViewModels.Admin.AdminTrainRoutesViewModel;
+
+@{
+
+    ViewData["Title"] = "TrainRoutes";
+}
+    <link rel="stylesheet" href="~/css/table.css?v=<%= DateTime.Now.Ticks %" />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WADTrans website</title>
+
+
+</head>
+
+<body>
+    <h1 style="text-align:center">Train Routes</h1>
+
+
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>Train Route No</th>
+                <th>TicketsLeftC1</th>
+                <th>TicketsLeftC2</th>
+                <th>Class1 Price</th>
+                <th>Class2 Price</th>
+                <th>Departure Date</th>
+                <th>Departure City</th>
+                <th>Departure Hour</th>
+                <th>Arrival Date</th>
+                <th>Arrival City</th>
+                <th>Arrival Hour</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var trainRoute in Model.TrainRoutes)
+            {
+            <tr>
+                <td>@trainRoute.TrainRouteNo</td>
+                <td>@trainRoute.TicketsLeftC1</td>
+                <td>@trainRoute.TicketsLeftC2</td>
+                <td>@trainRoute.Class1Price</td>
+                <td>@trainRoute.Class2Price</td>
+                <td>@trainRoute.TrainSchedule.DepartureDate.Date</td>
+                <td>@trainRoute.TrainSchedule.DepartureCity</td>
+                <td>@trainRoute.TrainSchedule.DepartureHour</td>
+                <td>@trainRoute.TrainSchedule.ArrivalDate.Date</td>
+                <td>@trainRoute.TrainSchedule.ArrivalCity</td>
+                <td>@trainRoute.TrainSchedule.ArrivalHour</td>
+                <td><a class="buttons" asp-controller="Admins" asp-action="EditTrainRoute" asp-route-Id="@trainRoute.TrainRouteID">Edit</a></td>
+                <td>
+                    <a class="buttons" asp-controller="Admins" asp-action="DeleteTrainRoute" asp-route-Id="@trainRoute.TrainRouteID"
+                       onclick="return confirm('Are you sure you want to delete flight: @trainRoute.TrainRouteNo')">Delete</a>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+
+    </table>
+
+</body>
+</html>

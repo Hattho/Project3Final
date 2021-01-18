@@ -1,0 +1,45 @@
+﻿@using TrainTravel.ViewModels.Clients;
+@model ClientEditAccountViewModel;
+@{
+    ViewData["Title"] = "EditAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <link rel="stylesheet" href="~/css/addRoute.css?v=<%= DateTime.Now.Ticks %" />
+
+    <body>
+        <div style="text-align: center;">
+
+            <h1>Edit Account</h1>
+            <br>
+            <form asp-action="EditAccount" method="post">
+                <div class="labels">
+                    <input hidden asp-for="UserId" />
+
+                    <label for="FirstName"><b>First Name:</b></label>
+                    <input asp-for="FirstName" class="boxes" type="text" placeholder="FirstName..." name="FirstName"><br>
+
+                    <label for="LastName"><b>Last Name:</b></label>
+                    <input asp-for="LastName" class="boxes" type="text" placeholder="LastName..." name="LastName"><br>
+
+                    <label for="Username"><b>Username:</b></label>
+                    <input asp-for="Username" class="boxes" type="text" placeholder="Username..." name="Username"><br>
+
+                    <label for="Email"><b>Email:</b></label>
+                    <input asp-for="Email" class="boxes" type="text" placeholder="Email..." name="Email"><br>
+
+                    <label for="PhoneNo"><b>PhoneNr:</b></label>
+                    <input asp-for="PhoneNo" class="boxes" type="text" placeholder="PhoneNo..." name="PhoneNo"><br>
+
+
+                    <br>
+                </div>
+                <br />
+
+                <button type="submit" class="buttons">Save</button>
+            </form>
+
+        </div>
+
+    </body>
+

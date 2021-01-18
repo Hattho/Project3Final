@@ -1,0 +1,111 @@
+﻿@using TrainTravel.ViewModels.Clients;
+@model ClientBuyTicketViewModel;
+@{
+    ViewData["Title"] = "BuyTicket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Buy Ticket</h1>
+<link rel="stylesheet" href="~/css/table.css?v=<%= DateTime.Now.Ticks %" />
+<link rel="stylesheet" href="~/css/addRoute.css?v=<%= DateTime.Now.Ticks %" />
+
+<body>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>FlightNo</th>
+                <th>Class1 Price</th>
+                <th>Class2 Price</th>
+                <th>Departure Date</th>
+                <th>Departure City</th>
+                <th>Departure Hour</th>
+                <th>Arrival Date</th>
+                <th>Arrival City</th>
+                <th>Arrival Date</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.TrainRouteNo</td>
+                <td>@Model.Class1Price</td>
+                <td>@Model.Class2Price</td>
+                <td>@Model.DepartureDate</td>
+                <td>@Model.DepartureCity</td>
+                <td>@Model.DepartureHour</td>
+                <td>@Model.ArrivalDate</td>
+                <td>@Model.ArrivalCity</td>
+                <td>@Model.ArrivalHour</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+
+    <div style="text-align:center">
+
+        <h2 class="title">Buy Ticket</h2>
+        <br>
+        <form asp-action="BuyTicket" method="post">
+            <div class="labels">
+
+                <input hidden asp-for="TrainRouteId" />
+
+                <div class="column">
+
+                    <label for="FirstName"><b>First Name:</b></label>
+                    <input asp-for="FirstName" class="boxes" type="text" placeholder="FirstName..." name="FirstName"><br>
+
+                    <label for="LastName"><b>Last Name:</b></label>
+                    <input asp-for="LastName" class="boxes" type="text" placeholder="LastName..." name="LastName"><br>
+
+                    <label for="TicketCategory"><b>TicketCategory :</b></label>                
+                    <select asp-for="TicketCategory" class="boxes" placeholder="TicketCategory..." name="TicketCategory">
+                        <option value="TicketsLeftC1">Category 1</option>
+                        <option value="TicketsLeftC2">Category 2</option>
+                    </select><br>
+
+                    <label for="TicketType"><b>Ticket Type:</b></label>            
+                    <select asp-for="TicketType" class="boxes" placeholder="TicketType..." name="TicketType">
+                        <option value="Normal">Normal</option>
+                        <option value="Student">Student</option>
+                        <option value="Pensionar">Pensionar</option>
+                    </select><br>
+
+                    <label for="DiscountCode"><b>DiscountCode:</b></label>
+                    <input asp-for="DiscountCode" class="boxes" type="text" placeholder="DiscountCode..." name="DiscountCode"><br>
+
+                    <label for="CardNumber"><b>Card Number:</b></label>
+                    <input class="boxes" type="text" placeholder="CardNumber..." name="CardNumber"><br>
+
+                    <label for="PaymentMethod"><b>Payment Method:</b></label>                
+                    <select class="boxes" placeholder="PaymentMethod..." name="PaymentMethod">
+                        <option value="volvo">Visa</option>
+                        <option value="saab">Master Card</option>
+                    </select><br>
+
+                    <label for="CardHolderName"><b>CardHolder Name:</b></label>
+                    <input class="boxes" type="text" placeholder="CardHolderName..." name="CardHolderName"><br>
+
+                    <label for="ExpirationDate"><b>Expiration Date:</b></label>
+                    <input class="boxes" type="date" asp-format="{MM/yy}" name="ExpirationDate"><br>
+
+                    <label for="CVV"><b>CVV:</b></label>
+                    <input class="boxes" type="number" placeholder="CVV..." name="CVV"><br>
+
+                </div>
+
+            </div>
+            <br />
+            <button type="submit" class="buttons">Buy Ticket</button>
+        </form>
+
+    </div>
+
+
+</body>
+

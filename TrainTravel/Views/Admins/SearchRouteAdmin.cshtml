@@ -1,0 +1,46 @@
+@using TrainTravel.ViewModels.Admin;
+@model ClientSearchRouteViewModel;
+@{
+
+    ViewData["Title"] = "SearchRouteAdmin";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WADTrans website</title>
+    <link rel="stylesheet" href="~/css/searchAdmin.css?v=<%= DateTime.Now.Ticks %" />
+
+</head>
+
+<body>
+
+    <br>
+    <form asp-action="SearchRouteAdmin" method="post">
+        <div class="arrange">
+
+            <p style="font-size: 30px; margin-bottom: 40px;">Route searched for:</p>
+            <div class="labels">
+
+                <label for="source"><b>Departure City:</b></label>
+                <input asp-for="DepartureCity" class="boxes" type="text" placeholder="Departure City..." name="DepartureCity"><br>
+                <br>
+                <label for="dest"><b>Arivval city:</b></label>
+                <input asp-for="ArrivalCity" class="boxes" type="text" placeholder="Arrival city..." name="ArrivalCity"><br>
+                <br>
+                <label for="date"><b>Date:</b></label>
+                <input asp-for="DepartureDate" class="boxes" type="date" placeholder="Date" name="DepartureDate"><br>
+
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div style=" text-align: center;">
+            <button class="search" type="submit">Search</button>
+
+        </div>
+    </form>
+</body>
+
+</html>

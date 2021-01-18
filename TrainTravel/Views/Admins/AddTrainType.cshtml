@@ -1,0 +1,47 @@
+﻿@using TrainTravel.ViewModels.Admin;
+@model AdminAddTrainTypeViewModel;
+@{
+  
+    ViewData["Title"] = "AddTrainType";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WADTrans website</title>
+    <link rel="stylesheet" href="~/css/addRoute.css?v=<%= DateTime.Now.Ticks %" />
+
+</head>
+
+<body>
+
+    <form asp-action="AddTrainType" method="post">
+        <div style="text-align: center;">
+
+            <h2 style="text-align: center;">Add Train Type Page</h2>
+            <br>
+            <div class="labels">
+
+                <label for="Model"><b>Model:</b></label>
+                <input asp-for="Model" class="boxes" type="text" placeholder="Model..." name="Model"><br>
+
+                <label for="CapacityClass1"><b>CapacityClass1:</b></label>
+                <input asp-for="CapacityClass1" class="boxes" type="number" placeholder="CapacityClass1..." name="CapacityClass1"><br>
+
+                <label for="CapacityClass2"><b>CapacityClass2:</b></label>
+                <input asp-for="CapacityClass2" class="boxes" type="number" placeholder="CapacityClass2..." name="CapacityClass2"><br>
+
+
+            </div>
+            <br>
+            <button type="submit" class="buttons">Add Train Type</button>
+
+        </div>
+
+
+    </form>
+
+
+</body>
+
+</html>

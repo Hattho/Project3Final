@@ -1,0 +1,65 @@
+﻿@using TrainTravel.ViewModels.Admin;
+@model AdminEditTrainRouteViewModel;
+@{
+    ViewData["Title"] = "EditTrainRoute";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/addRoute.css?v=<%= DateTime.Now.Ticks %" />
+<h1 style="text-align:center">Edit Train Route</h1>
+
+<body>
+
+
+    <div style="text-align:center">
+
+        <br>
+        <form asp-action="EditTrainRoute" method="post">
+            <div class="labels">
+
+                <div class="column">
+                    <input hidden asp-for="TrainRouteId" />
+                    <label for="TrainRouteNo"><b>TrainRouteNo:</b></label>
+                    <input asp-for="TrainRouteNo" class="boxes" type="text" placeholder="TrainRouteNo..." name="TrainRouteNo"><br>
+
+                    <label for="Class1Price"><b>Class1Price:</b></label>
+                    <input asp-for="Class1Price" class="boxes" type="number" step=".01" placeholder="Class1Price..." name="Class1Price"><br>
+
+                    <label for="Class2Price"><b>Class2Price:</b></label>
+                    <input asp-for="Class2Price" class="boxes" type="number" step=".01" placeholder="Class2Price..." name="Class2Price"><br>
+
+                    <label for="TicketsLeftC1"><b>TicketsLeftC1:</b></label>
+                    <input asp-for="TicketsLeftC1" class="boxes" type="number" placeholder="TicketsLeftC1..." name="TicketsLeftC1"><br>
+
+                    <label for="TicketsLeftC2"><b>TicketsLeftC2:</b></label>
+                    <input asp-for="TicketsLeftC2" class="boxes" type="number" placeholder="TicketsLeftC2..." name="TicketsLeftC2"><br>
+
+                    <label for="DepartureDate"><b>DepartureDate:</b></label>
+                    <input asp-for="DepartureDate" class="boxes" type="date" asp-format="{0:yyyy-MM-dd}" name="DepartureDate"><br>
+
+                    <label for="DepartureCity"><b>DepartureCity:</b></label>
+                    <input asp-for="DepartureCity" class="boxes" type="text" placeholder="DepartureCity..." name="DepartureCity"><br>
+
+                    <label for="DepartureHour"><b>DepartureHour:</b></label>
+                    <input asp-for="DepartureHour" class="boxes" type="text" placeholder="DepartureHour..." name="DepartureHour"><br>
+
+                    <label for="ArrivalDate"><b>ArrivalDate:</b></label>
+                    <input asp-for="ArrivalDate" class="boxes" type="date" asp-format="{0:yyyy-MM-dd}" name="ArrivalDate"><br>
+
+                    <label for="ArrivalCity"><b>ArrivalCity:</b></label>
+                    <input asp-for="ArrivalCity" class="boxes" type="text" placeholder="ArrivalCity..." name="ArrivalCity"><br>
+
+                    <label for="ArrivalHour"><b>ArrivalHour:</b></label>
+                    <input asp-for="ArrivalHour" class="boxes" type="text" placeholder="ArrivalHour..." name="ArrivalHour"><br>
+
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="buttons">Edit TrainRoute</button>
+        </form>
+
+    </div>
+
+
+</body>
+

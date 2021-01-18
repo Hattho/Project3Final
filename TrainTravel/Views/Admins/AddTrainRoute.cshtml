@@ -1,0 +1,73 @@
+@using TrainTravel.ViewModels.Admin;
+@model AdminAddTrainRouteViewModel;
+@{
+    ViewData["Title"] = "AddTrainRoute";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WADTrans website</title>
+	<link rel="stylesheet" href="~/css/addRoute.css?v=<%= DateTime.Now.Ticks %" />
+
+</head>
+
+<body>
+
+
+	<form asp-action="AddTrainRoute" method="post">
+        <div style="text-align: center;">
+
+            <h2 style="text-align: center;">Add Route Page</h2>
+            <br>
+            <div  class="labels">
+
+                <div class="column">
+
+                    <label for="TrainRouteNo"><b>Train Route Number:</b></label>
+                    <input asp-for="TrainRouteNo" class="boxes" type="text" placeholder="TrainRouteNo..." name="TrainRouteNo"><br>
+
+                    <label for="Class1Price"><b>Class1 Price:</b></label>
+                    <input asp-for="Class1Price" class="boxes" type="number" step=".01" placeholder="Class1Price..." name="Class1Price"><br>
+
+                    <label for="Class2Price"><b>Class2 Price:</b></label>
+                    <input asp-for="Class2Price" class="boxes" type="number" step=".01" placeholder="Class2Price..." name="Class2Price"><br>
+
+                    <label for="DepartureDate"><b>Departure Date:</b></label>
+                    <input asp-for="DepartureDate" class="boxes" type="date" asp-format="{0:yyyy-MM-dd}" name="DepartureDate"><br>
+
+                    <label for="DepartureCity"><b>Departure City:</b></label>
+                    <input asp-for="DepartureCity" class="boxes" type="text" placeholder="DepartureCity..." name="DepartureCity"><br>
+
+                    <label for="DepartureHour"><b>Departure Hour:</b></label>
+                    <input asp-for="DepartureHour" class="boxes" type="text" placeholder="DepartureHour..." name="DepartureHour"><br>
+
+                    <label for="ArrivalDate"><b>Arrival Date:</b></label>
+                    <input asp-for="ArrivalDate" class="boxes" type="date" asp-format="{0:yyyy-MM-dd}" name="ArrivalDate"><br>
+
+                    <label for="ArrivalCity"><b>Arrival City:</b></label>
+                    <input asp-for="ArrivalCity" class="boxes" type="text" placeholder="ArrivalCity..." name="ArrivalCity"><br>
+
+                    <label for="ArrivalHour"><b>Arrival Hour:</b></label>
+                    <input asp-for="ArrivalHour" class="boxes" type="text" placeholder="ArrivalHour..." name="ArrivalHour"><br>
+
+                    <label for="TrainType"><b>Train Type:</b></label>
+                    <select asp-for="TrainType" asp-items="@Model.TrainTypes" class="boxes">
+                        <option value="">Please Select</option>
+                    </select><br>
+                </div>
+
+
+            </div>
+            <br>
+            <button type="submit" class="buttons">Add Route</button>
+
+        </div>
+
+
+	</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+﻿body {
+    margin: 0;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    /*background-position: center;*/
+    /*background-repeat: repeat;*/
+    background-size: cover;
+    background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url('../media/bgcb.jpg') no-repeat center center fixed;
+    /*background: url(images/bg.jpg) no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.buttons1 {
+    background-color: #ffeecc;
+    float: right;
+    border: 1px;
+    border-style: solid;
+    border-color: #ff9933;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.BigTitle {
+    text-align: left;
+    color: black;
+    font-size: 36px;
+    margin-left: 20px;
+}
+
+.smallT {
+    text-align: right;
+    color: black;
+    font-size: 30px;
+    margin-right: 80px;
+}
+
+#dreapta {
+    margin-right: 350px;
+}
+
+.paragraf {
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+

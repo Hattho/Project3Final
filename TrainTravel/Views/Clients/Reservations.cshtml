@@ -1,0 +1,35 @@
+﻿@model TrainTravel.ViewModels.Clients.ClientReservationViewModel
+@{
+    ViewData["Title"] = "Reservations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <link rel="stylesheet" href="~/css/table.css?v=<%= DateTime.Now.Ticks %" />
+<h1 style="text-align: center;">Reservations</h1>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>DiscountCode</th>
+                <th>Seat</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.Reservations)
+            {
+                <tr>
+
+                    <td>@reservation.TicketHolder.LastName</td>
+                    <td>@reservation.TicketHolder.FirstName</td>
+                    <td>@reservation.TicketHolder.CNP</td>
+                    <td>@reservation.Seat</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</body>
+

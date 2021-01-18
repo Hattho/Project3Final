@@ -1,0 +1,53 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+    <link rel="stylesheet" href="~/css/addInfo.css?v=<%= DateTime.Now.Ticks %" />
+
+<h1 class="title">@ViewData["Title"]</h1>
+<div>
+    <div style="text-align: center;">
+        <section>
+            <form id="account" method="post">
+                <h4 style="text-align: center;">Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label class="labels" asp-for="Input.UserName"></label>
+                    <input class="boxes" asp-for="Input.UserName"  />
+                    <span asp-validation-for="Input.UserName" ></span>
+                </div>
+                <div class="form-group">
+                    <label class="labels" asp-for="Input.Password"></label>
+                    <input class="boxes" asp-for="Input.Password"  />
+                    <span asp-validation-for="Input.Password" ></span>
+                </div>
+                <div>
+                    <div>
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="buttons">Log in</button>
+                </div>
+                <div>
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+
+                </div>
+            </form>
+        </section>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

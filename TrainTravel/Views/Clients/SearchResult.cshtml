@@ -1,0 +1,48 @@
+﻿@using TrainTravel.ViewModels.Clients;
+@model ClientSearchResultViewModel;
+@{
+    ViewData["Title"] = "SearchResult";
+}
+    <link rel="stylesheet" href="~/css/table.css?v=<%= DateTime.Now.Ticks %" />
+<h1 style="text-align: center;">Search Result</h1>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Train Route No</th>
+                <th>TicketsLeftC1</th>
+                <th>TicketsLeftC2</th>
+                <th>Class1 Price</th>
+                <th>Class2 Price</th>
+                <th>Departure Date</th>
+                <th>Departure City</th>
+                <th>Departure Hour</th>
+                <th>Arrival Date</th>
+                <th>Arrival City</th>
+                <th>Arrival Hour</th>
+                <th>Buy Ticket</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var trainRoute in Model.TrainRoutes)
+            {
+                <tr>
+                    <td>@trainRoute.TrainRouteNo</td>
+                    <td>@trainRoute.TicketsLeftC1</td>
+                    <td>@trainRoute.TicketsLeftC2</td>
+                    <td>@trainRoute.Class1Price</td>
+                    <td>@trainRoute.Class2Price</td>
+                    <td>@trainRoute.TrainSchedule.DepartureDate.Date</td>
+                    <td>@trainRoute.TrainSchedule.DepartureCity</td>
+                    <td>@trainRoute.TrainSchedule.DepartureHour</td>
+                    <td>@trainRoute.TrainSchedule.ArrivalDate.Date</td>
+                    <td>@trainRoute.TrainSchedule.ArrivalCity</td>
+                    <td>@trainRoute.TrainSchedule.ArrivalHour</td>
+                    <td><a class="buttons" asp-controller="Clients" asp-action="BuyTicket" asp-route-Id="@trainRoute.TrainRouteID">Buy Ticket</a></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</body>

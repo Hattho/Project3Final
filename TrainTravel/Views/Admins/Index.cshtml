@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Admin Page</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+
+<div>
+    <h1 class="title">Home Page</h1>
+</div>
+
+<head>
+    <title>WADTrans website</title>
+    <link rel="stylesheet" href="~/css/chome.css?v=<%= DateTime.Now.Ticks %" />
+
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="~/images/bucharest.jpg" style="width:100%">
+            <div class="text">Visit Bucharest, Romania</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="~/images/cluj.jpg" style="width:100%">
+            <div class="text">Visit Cluj, Romania</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="~/images/budapesta.jpg" style="width:100%">
+            <div class="text" style="color: black">Visit Budapest, Hungary</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="~/images/brasov.jpg" style="width:100%">
+            <div class="text">Visit Brasov, Romania</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <div class="paragraf">
+        <p>Don't know where to go? Take a look at our favourite destinations available!</p>
+    </div>
+
+
+    <script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  	showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  	showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  	var i;
+			  	var slides = document.getElementsByClassName("mySlides");
+			  	var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}
+			  	if (n < 1) {slideIndex = slides.length}
+			  	for (i = 0; i < slides.length; i++) {
+			    	  slides[i].style.display = "none";
+			  	}
+			  	for (i = 0; i < dots.length; i++) {
+			  	    dots[i].className = dots[i].className.replace(" active", "");
+			  	}
+			  	slides[slideIndex-1].style.display = "block";
+			  	dots[slideIndex-1].className += " active";
+			}
+    </script>
+
+
+</body>

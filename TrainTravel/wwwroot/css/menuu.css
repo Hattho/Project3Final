@@ -1,0 +1,60 @@
+﻿body {
+    margin: 0;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    /*background-position: center;*/
+    /*background-repeat: repeat;*/
+    background-size: cover;
+    background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url('../media/bgcb.jpg') no-repeat center center fixed;
+    /*background: url(images/bg.jpg) no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.menu {
+    overflow: hidden;
+    background-color: #334d4d;
+    color: white;
+}
+
+    .menu a {
+        float: right;
+        color: #ffffff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .menu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+.active {
+    background-color: #ff9966;
+    color: white;
+}
+
+
+/*.foooter {
+    text-align: center;
+    height: 25px;
+    margin-top: auto;
+    background: PapayaWhip;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border: 0px;
+    border-top: 1px;
+    border-style: solid;
+    border-color: black;
+}*/
+
+.title {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+}

@@ -1,0 +1,45 @@
+﻿@model TrainTravel.ViewModels.Admin.AdminTrainTypeViewModel;
+
+@{
+
+    ViewData["Title"] = "TrainTypes";
+}
+
+    <link rel="stylesheet" href="~/css/table.css?v=<%= DateTime.Now.Ticks %" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WADTrans website</title>
+    
+
+</head>
+
+<body>
+
+    <h1 style="text-align:center">Train Types</h1>
+
+
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>TicketsLeftC1</th>
+                <th>TicketsLeftC1</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var trainType in Model.TrainTypes)
+            {
+            <tr>
+                <td>@trainType.Model</td>
+                <td>@trainType.CapacityClass1</td>
+                <td>@trainType.CapacityClass2</td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+
+</body>
+</html>
